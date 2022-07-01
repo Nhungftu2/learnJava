@@ -1,1 +1,35 @@
 Ghi lý thuyết ở đây:
+Static là vùng nhớ dùng chung, cho đó không nên đặt những gì của riêng obj với static
+Static chỉ chơi với Static. 
+--------------------------------------------khai báo static bình thường và khai báo static với hằng (thêm final nữa)
+public class Demo{
+   public static double Pi = 3.14; (cái này đổi đc)
+   // biến khai báo hằng :(ko cho thay đổi)
+   public static final double PI = 3.14; // thêm final ko để đc
+}
+-------------------------------------------Sử dụng static (khi nào cần thì lấy hàm ra dùng)
+public class MyToys{
+public static int getAnInteger(){ // hàm này trả về một số nguyên
+  int n; //biến chứa dữ liệu nhập từ bàn phím.
+  Scanner sc = new Scanner(System.int); //(khởi tạo để sử dụng đây là hàm constructor trong class).
+  do {
+    try{
+      System.out.print("Input here: ");
+      // n = sc.nextInt(); // trôi lệnh
+      n = Integer.parseInt(sc.nextLine());
+      return n; // tới đây thoát hàm, nếu break thì chỉ thoát vòng lặp
+    }catch (Exception e){
+      System.out.println("Your input has String type")
+    }
+  }
+}
+--------------------------------------------Sử dụng hàm static trên trong bài toán tính diện tích hcn;
+public class Stage {
+  public static void main(String[] args){
+    System.out.print("PI :" + Mytoys.PI); // PI là hằng được khai báo static, vô lấy sài ko cần new.
+    int width = MyToys.getAnInteger();
+     int height = MyToys.getAnInteger();
+     System.out.println("width: "+ width);
+     System.out.println("height: "+ height);
+  }
+}
