@@ -111,4 +111,19 @@ public class Samurai {
         }
 }
 ----------------------------------------------------------------------------------------------
+dùng vòng lặp for kết hợp với try catch
+while(69<79){
+                try{
+                    System.out.print("Input yob: ");
+                    yob = Integer.parseInt(sc.nextLine());
+                    break;
+                }catch(Exception e){
+                    System.out.println("Enter number please");
+                }
+                }// xử lý được cho đến khi nhập lại được
+
+            System.out.println("Ten Ban la " + name);
+            System.out.println("Tuoi ban la " + (2022-yob));
+            System.out.println("Dia chi  " + address);
+        }
 
