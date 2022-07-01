@@ -32,4 +32,4 @@ public class Stage {
      System.out.println("width: "+ width);
      System.out.println("height: "+ height);
   }
-}
+} // => từ đây suy ra được static cho truy cập ko cần new. dùng function luôn
