@@ -1,5 +1,0 @@
-INPUT 
-- các bước sử dụng scanner :
-b1: import java.util.Scanner; (đặt đầu code)
-b2: Scanner sc = new Scanner(System.in); // lệnh khởi tạo để dùng
-b3: String address = sc.nextLine(); // sử dụng : lấy dữ liệu (dạng chuỗi) từ bàn phím và lưu vào biến address

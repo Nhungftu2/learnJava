@@ -1,0 +1,114 @@
+INPUT------------------------------------------------------------------------------------------------------------------------INPUT 
+- các bước sử dụng scanner (một Class được java hổ trợ sẳn, mình chỉ lấy ra dùng thôi, cách dùng làm theo các bước):
+B1: import java.util.Scanner; (đặt đầu code)
+B2: Scanner sc = new Scanner(System.in); // lệnh khởi tạo để dùng(đặt trong class hoặc hàm main đều được), sc là một định danh để nào dùng lấy nó ra chấm với nextLine()...
+B3: String address = sc.nextLine(); // sử dụng : lấy dữ liệu (dạng chuỗi) từ bàn phím và lưu vào biến address
+-------------------------
+- Phân biệt nextLine() , nextInt(),...còn nữa mà chưa tìm hiểu thêm, đại loại là vậy
+Luôn nhớ dữ liệu nhập từ bàn phím luôn có dạng String
+=> ví dụ String address = sc.nextLine(); nextLine(); biến address sẽ lưu chuỗi String
+=> ví dụ Int Age = sc.nextInt(); dữ liệu 1,2,3... nhập từ bàn phím (đang định là chuỗi) được convert (chuyển đổi) thành số Int khi xuất ra và sử dụng trong code.
+-------------------------------------------------------------------------------
+
+- (Hiện tượng lạc trôi khi nhập số trước chữ) : https://www.youtube.com/watch?v=OPB6E4z2m90&list=PLayYhLZuuO9ty9YiCDekVpCh_4V7NzO4C&index=32
+(Xem lại link vào phút 34 nha)
+TH1:(vẫn chạy đc)
+Int Age = sc.nextInt();// nhập 1 enter () => bỏ qua lệnh nhập chữ tiếp theo và kết thúc chương trình luôn
+String address = sc.nextLine(); // dòng này không chạy vì (nếu ở trên nhập số xong enter) đây gọi là hiện tượng lạc trôi
+
+TH2:(vẫn chạy được)
+Int Age = sc.nextInt();// nhập 1 HIHI enter () => lấy số 1 vào biến Age, còn " HIHI" vào biến address ở phía sau
+String address = sc.nextLine(); // cái này hứng phần thừa của việc input dữ liệu ở cái nextInt() ở trên (lấy tất cả từ sau số, tuy nhiên phải có dấu cách còn không có dấu cách xem TH3)
+
+TH3:(không chạy được)
+Int Age = sc.nextInt();// nhập 1HIHI enter () => Chương trình báo lỗi, chắc do dữ liệu đưa vào ko đưa đc về Int.
+String address = sc.nextLine();
+
+VẬy giải quyết câu chuyện trôi lệnh như thế nào????
+------------------------------
+Đầu tiên giải thích cơ chế lạc trôi: khi app bạn bắt đầu chạy , dù là excel word, ở trong Ram hết, việc nhập dữ liệu bạn gõ sẽ đi vào vùng Ram của app đó, đó gọi là buffer (bộ đệm) cái này là phần nó hứng dữ liệu nhập từ bàn phím (CPU chưa kịp sử lý thì để đó, khi nào làm xong thì xử lý sau)- như vùng đệm lưu tạm thời dữ liệu
+nextLine() hốt sạch bộ đệm kể cả enter, rồi vứt enter trừ phần còn lại bỏ vào biến
+nextInt() lấy có mỗi phần số nguyên rồi convert(chuyển đổi) sang Int (nếu người dùng nhập Enter) thì nó trừa lại cái enter đó
+vừa hay: nextLine()  nếu có ở đằng sau, hứng luôn, và thế là nó đc hiểu là enter kết thúc dòng, và kết thúc luôn (do đó lạc trôi xuất hiện)
+=> tự suy luận để hiểu các hiện tượng xuất hiện
+dấu " " trong trường nhập vào phân tách các phần của biến khi bạn nextInt(), nextInt() liên tục,....
+----------------------------
+KẾT LUẬN (ĐỊNH NGHĨA LẠC TRÔI):
+- nextInt() chỉ lấy dữ liệu int để lại rác
+- nextLine() hốt hết kể cả enter 
+-----------------------------
+XỬ LÝ NHƯ THẾ NÀO: bên C có lệnh xóa bộ đệm vậy Java thì sao...
+Chánh Đạo Quách Tĩnh : Integer.parseInt(sc.nextLine()); // cái này chưa rõ, bổ sung sau
+class TraiBao, Wrapper;
+class (boxing/unboxing);
+
+----> Xóa bộ đệm trước khi nhập chuỗi.
+CÁCH 1: ấn thêm sc.nextLine(); // không gán mình đánh để xóa bộ đệm thôi, ^^ 
+CÁCH 2: int yob = Integer.parseInt(sc.nextLine()); // em hốt sạch buffer và enter đi còn lại chuỗi 2001//
+nextLine() lấy hết chuỗi bỏ enter đi, sau đó parseInt cố gắng chuyển đổi chuỗi đó thành số (nếu hợp lệ)
+// luu y: Integer là Class Static dùng do multiple(nhiều) Object, dùng và chấm thôi chứ không cần new.  
+viết phô ra là String temtStr = sc.nextLine();// trả về "123"
+              int yob = Integer.parseInt(temtStr); // chuyển "123" thành số 123/ vậy 
+ 
+TRY & CATCH------------------------------------------------------------------------------------------------------------------------TRY & CATCH
+Mặc dù sử lý được vậy nhưng định nghĩa int mà người dùng nhập 123hn thì cũng ko chuyển đc là số 123, gọi là TH sai 
+VẬY SỬ LÝ NÓ NHƯ THẾ NÀO?? ++++
+CÓ NGAY: TRY VÀ CATCH:
+Khi nào sài Try catch
+-convert data (chuyển đổi dữ ) không thành công : chuỗi => số
+-chia cho 0 mà không chặn số chia qua if
+
+- đi quá số phần tử của mãng (out of bound)
+- Null Pointer - Chưa gán giá trị cho biến con trỏ/ biến object mà chấm 
+- kết nối mạng, database ở xa , server chết mạng rớt,...
+- I/O nhập xuất với tập tin, bắt buộc phải nhốt lệnh vào Try Catch (mặc định JVM hay Java sẽ bắt nếu có lỗi xảy ra để đảm bảo tính an toàn cho việc xử lý data, trên nguyên tắc dữ liệu sai sẽ ko sử lý tiếp , đưa cho cơ chế tự xử lí khi có lỗi xảy ra)
+- còn nhiều tình huống khác nữa.  
+VÍ DỤ CHO TRY CATCH
+-------------------------------------------------------------
+import java.util.Scanner;
+
+public class Samurai {
+    public static void main(String[] args){
+        inputProfile();
+    }
+
+        public static void inputProfile(){
+        // ko OOP chỉ cần nhập info trước đã, không chơi class student
+            String name, address;
+            int yob;
+            Scanner sc = new Scanner(System.in);
+            System.out.print("input name: ");
+            name = sc.nextLine().toUpperCase(); // lấy String từ trg nhập vào và in hoa luôn
+
+            System.out.print("input address: ");
+            address = sc.nextLine();
+
+            //System.out.print("input yob: ");
+            // sc.nextLine();
+            // yob= sc.nextInt(); // convert data từ bàn phím, là chuỗi thành số
+            //yob = Integer.parseInt(sc.nextLine()); // cố gắng convert(chuyển đổi data) thành dạng số
+            try {
+                yob = Integer.parseInt(sc.nextLine());
+                // lệnh lỗi nằm ở đâyy thì bay vào catch
+                //Lệnh ở đây chạy okie thì ko qua catch mà đi thẳng luôn
+            }catch (Exception e){
+                // CPU chạy đến đây khi có lỗi xảy ra
+                // //JVM sẽ không bắt lỗi và giết app như truyền thống
+                // đây là chổ xử lý hậu quả
+                // nếu không có lỗi thì ko vào đây
+                // e chính là lá thư màu đỏ JVM gửi cho mình rằng có lỗi như này nè => làm gì thì làm
+                // Exception e = new Exception(Nội dung màu đỏ đây);
+                // về lý, e.xem lỗi; xử lý tự viết
+
+                //XỬ LÝ: Cho default value yob=69;
+                yob=24;
+
+            }
+
+            System.out.println("Ten Ban la " + name);
+            System.out.println("Tuoi ban la " + (2022-yob));
+            System.out.println("Dia chi  " + address);
+        }
+}
+----------------------------------------------------------------------------------------------
+
