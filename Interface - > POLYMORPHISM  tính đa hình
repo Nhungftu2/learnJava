@@ -1,0 +1,13 @@
+Interface - Bộ tiêu chuẩn, cam kết, quy tắc-----------------------------------------------
+INTERFACE : là cuộc chơi giữa các bên có liên quan , theo một cách thức được định trước (chung giao tiếp, protocol)
+INTERFACE: là một bộ tiêu chuẩn chung , liệt kê các tiêu chí cần có , liệt kê các tiêu chuẩn, các cam kết , các khế ước và các bên đối tác .
+các bên liên quan sẽ chấp nhận thực thi các điều khoản này ở giai đoạn sau này (implement) ==> từ đó giúp các bên dễ giao tiếp, dễ chấp nhận nhau hơn, chuyển và và xử lý thông tin cho nhau;
+- Là clb có các tiêu chí chung chung (hành động abstract ) gom những người "khác biệt " nhưng chỉ cần "chung"lý tưởng/ hành động (tức chung hàm , không chung dữ liệu) ai cùng chí hướng thì mời tham gia (implement)
+
+INTERFACE được coi là một class cha đặc biệt : có thể hiêu là đời cha lên ý tưởng, đời con thực hiện
+Vì các hàm con khác nhau chạy cùng hàm abtract (trừu tượng) của CHA , các con hưởng ứng theo cách của mình => đa hình. (như vậy từ 1 lý tưởng cha ra nhiều hình thái thông qua việc thực thi bởi các con)
+ở đây hàm kế thừa được ưu tiên hơn, @Override
+
+ai chấp nhận chơi với interface (có sử dung biến kiểu interface) => chơi với cách sử lý khác nhau nhưng đứng chung một tên ăn theo (khác implement nhưng cùng tên hàm)
+Dễ dàng linh hoạt với các xử lý , hành động ứng xử của người khác trong tương lai hicohesion - sự gắn kết cao , low/loose coupling 
+thay vì phụ thuộc vào cái cụ thể, ta dựa vào cái trừu tượng - abstract để giúp ta linh hoạt với mọi thứ khác biệt sau này 
