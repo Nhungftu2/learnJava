@@ -1,0 +1,50 @@
+CÁC THÀNH PHẦN STATIC 
+- các hàm static chỉ gọi được các biến, hàm static
+
+- có thể sử dụng trực tiếp mà không cần đến đối tượng 
+- Là các thành phần dùng chung cho tất cả phương thức trong lớp chứa nó;
+- thành phần static bắt đầu bởi keyword static, ta có thể tạo ra các lớp static , các phương thức, các khối static ,... 
+- Đây là các thành phần chia sẽ chung cho tất cả các đối tượng của lớp chứa nó 
+- giá trị của các trường (biến) static được sinh ra và khởi tạo giá trị tại lần đầu tiên lớp chứa nó được load ;
+ví dụ điển hình là phương thức main, lớp Math
+ở phương thức main 
+public static void main(String[] args){}// phương thức đặc biệt để chạy chương trình, nó như một cái ngõ open các đối tượng để vô được và chạy nên nó có static.
+Ví dụ điển hình là class Math có các thành phần static như Math.e , Math.abs(-122); các phương thức abs trong class Math là public static (public là cho bên ngoài dùng, static là ko cần new => câu này chưa chắc )
+
+-----------------------------------------CÂU HỎI CHƯA TRẢ LỜI ĐC, TÌM HIỂU BỔ SUNG SAU
+phân biệt lớp static và phương thức static, đối với lớp static/ 
+ko static đối sử nhau như nào
+và phương thức static  trong 1 lớp ko static /
+phương thức static trong 1 lớp static 
+4TH đó, làm ví dụ để hiểu nha
+
+----------------------------BIẾN STATIC 
+
+public class StaticMembers{
+  public static int beginId = 1000;
+  public static String MSG = "helo";
+  private int id;
+  public StaticMembers(){// hàm khởi tạo
+    id = beginId++;
+  }
+  public getId(){
+    return id;
+  }
+  
+  public static void main(String[] args){
+    StaticMembers s1 = new StaticMembers();
+    StaticMembers s2 = new StaticMembers();
+    StaticMembers s3 = new StaticMembers();
+    StaticMembers s4 = new StaticMembers();
+    
+    System.out.print ("s1 id là: "+ s1.getId() )
+    System.out.print ("s2 id là: "+ s2.getId() )
+    System.out.print ("s3 id là: "+ s3.getId() )
+    System.out.print ("s4 id là: "+ s4.getId() ) => chổ này hơi sai sai, gọi 4 lần tăng lên 4 số , nhưng s1, s2, s3 ,s4 cùng chung 1 giá trị mất tiêu rồi...KIỂM TRA LẠI. EO ƠI, STATIC PHỨC TẠP GHÊ 
+  }
+}//=> ví dụ này có vẽ cũng có thể dễ hiểu cho static nè
+
+----------------PHƯƠNG THỨC STATIC có 3 cách để gọi và sử dụng một hàm static trong 1 class : thông qua 1 đối tượng cụ thể , thông qua tênn lớp (nếu cùng lớp thì gọi thẳng  nó luôn không cần chấm)
+
+
+
