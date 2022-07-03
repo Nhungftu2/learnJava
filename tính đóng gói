@@ -1,0 +1,12 @@
+- các thuộc tính thường để private 
+- các phương thức vận hành dựa trên các thuộc tính thì thường để public 
+=> thông tin của lớp nào thì do lớp đấy quản lý, và chỉ có lớp đó có quyền truy cập một cách trực tiếp và nếu ở bên ngoài muốn truy cập vào để sữa đổi thì phải thông qua lớp của chúng ta => chính vì vậy ai muốn sử dụng của lớp nào thì phải thông qua nó, nên việc quản lý thông tin trở nên dễ dàng, đánh bản quyền truy cập chẳng hạn
+
+Các lớp bên ngoài mà sửa đổi/ sử dụng được ở lớp class thì hàm trong class đó phải có public 
+=> ẩn dấu thông tin nhạy cảm bởi thế giới bên ngoài . Dễ dàng kiểm soát 
+Để cho phép bên ngoài lấy thì sử dung get, sửa thì sử dụng set. Nếu thông tin nào được phép thì lớp đó sẽ định nghĩa get set tùy theo nó muốn hay không.
+
+ví dụ:
+public void setAge (int age);
+=> Cat kit = new Cat();// tạo đói tượng thông qua new
+Cat.setAge = 2; // thay đổi giá trị private thông qua hàm set mà class đó có mở sẳn, nếu nó ko mở, ko định nghĩa thì cũng ko có mà dùng 
