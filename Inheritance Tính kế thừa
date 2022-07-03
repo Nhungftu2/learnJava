@@ -1,1 +1,34 @@
+KẾ THỪA TRONG JAVA 
+- Cho phép tái sử dụng, tận dụng các lớp đã có để tạo ra lớp mới 
+- Để thực hiện , sử dụng keyword extends;
+- Lớp được lớp khác kế thừa gọi là lớp cha, lớp cơ sở (base class, supper class ,...)
+- lớp mà kế thừa lớp khác gọi là lớp con, lớp dẫn xuất (child class , derived class)
+Java chỉ cho phép đơn kế thừa
+// class Animal là lớp cha-----------------------------
+package animal;
+public class Animal{
+  private String name;
+  private int age;
+  private float weight;
+  
+  public void eat(){
+  System.out.println( name + " eat");
+  }
+}
 
+public class Fish extends Animal {
+  public void swim(){
+  ......
+  }
+}
+----------------------------------------------------------
+khi ta có những lớp kế thừa đó thì sẽ sử dụng như thế nào
+Tạo ra một lớp main trong package Animal 
+public class main {
+  public static void main(String[] args){
+    Animal fish = new Fish(); //=> kiểu của fish là Animal, nếu ko có keyword extends thì sẽ bị báo lỗi
+ ==> CHO THẤY TÍNH CHẤT KẾ THỪA Fish() từ lớp cha Animal, và TÍNH ĐA HÌNH TRONG TRƯỜNG HỢP NÀY.
+   
+  }
+}
+link youtube: https://www.youtube.com/watch?v=KfrvZy7x9lc
