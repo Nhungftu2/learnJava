@@ -1,0 +1,7 @@
+TÍNH ĐA HÌNH --------------
+ cho phép chúng ta viết nhiều phương thức, thể loại, biến thể của 1 phương thức, thể hiện thông qua overload, override 
+ có 2 loại đa hình là runtime và compile time, trong đó:
+ Runtime polymorphism thể hiện ở việc ghi đè phương thức 
+ => ví dụ trong override, đối tượng được tham chiếu nếu là obj của lớp cha sẽ lấy phương thức lớp cha, còn nếu là obj của lớp con thì sẽ lấy phương thức lớp con, mặc dù 2 phương thức cùng tên , nên gọi là override...tại cái thời điểm chương trình chạy thì java mới quyết định chọn cái nào.
+ compile time polymorphism(tính đa hình tại thời điểm biên dịch chương trình) thể hiện ở việc nạp chồng phương thức: chúng ta phải chỉ rõ các kiểu, số lượng thứ tự của các tham số ở trong những phương thức chúng ta nạp chồng, cái này giám sát ngay tại thời điểm chúng ta tạo ra những phương thức đấy, để phát hiện ra chúng có những đặc điểm nào khác nhau. ví dụ : overload 
+ 
