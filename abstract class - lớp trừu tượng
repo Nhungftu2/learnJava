@@ -1,0 +1,34 @@
+là lớp được khai báo với keyword abstract 
+thương chứa một hoặc nhiều phương thức trừu tượng - abstract
+(phương thức trừu tượng là phương thức, chỉ khai báo mà không định nghĩa,tức là không có thân của phương thức, chỉ có đến mở đóng ngoặc tròn là hết,  việc định nghĩa cụ thể sẽ do lớp con đảm nhiệm )
+Nếu lớp con không định nghĩa phương thức abstract của lớp cha thì nó phải trở thành lớp abstract 
+Có thể chứa phương thức khởi tạo nhưng .... 
+ta không thể tạo ra đối tượng của nó/lớp abstract. Nhưng chúng ta có thể tạo biến của lớp trừu tượng để tham chiếu đến những lớp con không phải là lớp abstract của lớp trừu tượng đó
+Có thể chứa cả các phương thức khác, thuộc tính khác và các trường static chẳng hạn ,.. vào trong lớp abstract bởi vì bản chất của lớp abstract cũng giống như những lớp khác, chỉ khác một điều là nó chứa những phương thức, chỉ nêu ra chứ nó không định nghĩa và nó không thể tạo ra cái đối tượng của bản thân nó
+MỤC ĐÍCH SỬ DỤNG : ẩn giấu cách thức thực thi cụ thể của một hành vi, hành động cụ thể nào đó. giúp việc nhìn nhận vấn đề một cách tổng thể mà ko cần quan tâm cái chi tiết phức tạp, thì làm cho việc thực thi một cách đơn giản hơn...
+    - cho phép một lớp nào đó đc phép kế thừa nhưng không cho phép tạo đối tượng của lớp 
+    
+    
+   
+      VÍ DỤ MINH HỌA 
+      package learnabstract;
+      public abstract class A{ // lớp A này là một lớp trừu tượng 
+          public abstract void eat(); // lớp A có 1 phương thức eat , khi mình không muốn định nghĩa gì cho eat cả, thì mình sẽ thêm abstract vào giữa, public và void => từ đây nó sẽ trở thành một phương thức không có định nghĩa, và bất kì lớp nào chứa 
+      }
+      
+      public class B extends A{ // tạo một lớp B extends lớp A
+      
+      }
+      ----------tạo hàm main trong một lớp khác 
+      public class D{
+      public static void main(String[] args){
+          A a = new A(); ///=> lỗi ko tạo đượng đối tượng với abstract class, tức không thể tạo đối tượng thông qua new
+          // Sau khi tạo lớp B extends lớp A => lúc này biến lớp A hoàn toàn có thể new B(). một cái biến của lớp cha, tham chiếu đến 1 kiểu của lớp con, nên tạo được. Vì sao hen??? .....
+          A a= new B();
+      
+      }
+      }
+      
+      
+      link youtube: https://www.youtube.com/watch?v=FHxIAH0sXz0
+
