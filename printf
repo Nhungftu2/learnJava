@@ -1,0 +1,9 @@
+Làm tròn và hiển thị số thực trong Java
+float f = 1.23445555555;
+System.out.printf("f = %2.3f", f)
+KẾT QUẢ: " 1.234"; có trừa thêm 1 space ở trước sô 1 do mình chọn là 2
+dạng dữ liệu float và double in ở printf trong java sẽ viết %...f;
+2 phần space(khoảng trắng cần) sẽ trừa chổ cho phần nguyên
+3 là số chữ số sau dấu phẩy sẽ hiển thị. 
+làm tương tự với double, tuy nhiên vẫn là %...f;
+
