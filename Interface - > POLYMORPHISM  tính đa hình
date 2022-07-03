@@ -11,3 +11,12 @@ Vì các hàm con khác nhau chạy cùng hàm abtract (trừu tượng) của C
 ai chấp nhận chơi với interface (có sử dung biến kiểu interface) => chơi với cách sử lý khác nhau nhưng đứng chung một tên ăn theo (khác implement nhưng cùng tên hàm)
 Dễ dàng linh hoạt với các xử lý , hành động ứng xử của người khác trong tương lai hicohesion - sự gắn kết cao , low/loose coupling 
 thay vì phụ thuộc vào cái cụ thể, ta dựa vào cái trừu tượng - abstract để giúp ta linh hoạt với mọi thứ khác biệt sau này 
+
+OBJECT - khuôn/class 1 mức nhận thức, thiết kế
+-> khuôn A, B, C thấy có chúng tương đồng
+đứng trên vai người khổng lồ, có sẳn rồi, làm thêm cho hay, phát huy thêm, ai đó dọn đường ta đi tiếp;
+muốn có OBJ ta cần khuôn X, 
+                        -> khuôn X làm từ đầu thì mất công, nên ta độ từ khuôn Y nào đó. 
+   Khuôn X là điều chỉnh từ khuôn Y 
+   có nguồn gốc dính dáng từ,... dùng lại ưu thế, thứ có sẳn từ Y;
+   
