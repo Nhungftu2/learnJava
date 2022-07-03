@@ -2,13 +2,12 @@ là lớp được khai báo với keyword abstract
 thương chứa một hoặc nhiều phương thức trừu tượng - abstract
 (phương thức trừu tượng là phương thức, chỉ khai báo mà không định nghĩa,tức là không có thân của phương thức, chỉ có đến mở đóng ngoặc tròn là hết,  việc định nghĩa cụ thể sẽ do lớp con đảm nhiệm )
 Nếu lớp con không định nghĩa phương thức abstract của lớp cha thì nó phải trở thành lớp abstract 
-Có thể chứa phương thức khởi tạo nhưng .... 
-ta không thể tạo ra đối tượng của nó/lớp abstract. Nhưng chúng ta có thể tạo biến của lớp trừu tượng để tham chiếu đến những lớp con không phải là lớp abstract của lớp trừu tượng đó
+Có thể chứa phương thức khởi tạo nhưng .... ta không thể tạo ra đối tượng của nó/lớp abstract. Nhưng chúng ta có thể tạo biến của lớp trừu tượng để tham chiếu đến những lớp con không phải là lớp abstract của lớp trừu tượng đó
+
 Có thể chứa cả các phương thức khác, thuộc tính khác và các trường static chẳng hạn ,.. vào trong lớp abstract bởi vì bản chất của lớp abstract cũng giống như những lớp khác, chỉ khác một điều là nó chứa những phương thức, chỉ nêu ra chứ nó không định nghĩa và nó không thể tạo ra cái đối tượng của bản thân nó
+
 MỤC ĐÍCH SỬ DỤNG : ẩn giấu cách thức thực thi cụ thể của một hành vi, hành động cụ thể nào đó. giúp việc nhìn nhận vấn đề một cách tổng thể mà ko cần quan tâm cái chi tiết phức tạp, thì làm cho việc thực thi một cách đơn giản hơn...
     - cho phép một lớp nào đó đc phép kế thừa nhưng không cho phép tạo đối tượng của lớp 
-    
-    
    
       VÍ DỤ MINH HỌA 
       package learnabstract;
@@ -23,12 +22,32 @@ MỤC ĐÍCH SỬ DỤNG : ẩn giấu cách thức thực thi cụ thể của 
       public class D{
       public static void main(String[] args){
           A a = new A(); ///=> lỗi ko tạo đượng đối tượng với abstract class, tức không thể tạo đối tượng thông qua new
-          // Sau khi tạo lớp B extends lớp A => lúc này biến lớp A hoàn toàn có thể new B(). một cái biến của lớp cha, tham chiếu đến 1 kiểu của lớp con, nên tạo được. Vì sao hen??? .....
-          A a= new B();
-      
+          
+          A a= new B(); // Sau khi tạo lớp B extends lớp A => lúc này biến lớp A hoàn toàn có thể new B(). một cái biến của lớp cha, tham chiếu đến 1 kiểu của lớp con, nên tạo được. Vì sao hen??? .....
       }
       }
+      ------------------
+      public abstract class A{// khai báo biến, hằng, nêu hàm abstract chỉ nêu ra ko định nghĩa, định nghĩa 1 hàm bình thường ...
+        private String name;
+        private static final int PI = 3.14;
+        // HÀM KHỞI TẠO trong class abstract 
+        public A(){
+        ..........
+        }
+        public A(String s){
+        ..........
+        }
+        public abstract void eat(); // hàm ko định nghĩa, hay gọi làm hàm abstract - trừu tượng
+        public void move(){ // hàm định nghĩa bình thường trong 1 class bình thường đều có
+        ....
+        }
+      }
+      một lớp abstract có thể có hoặc không có phương thức abstract, nhưng một lớp đã có phương thức abstract rồi thì phải là lớp abstract.
       
+      KẾT LUẬN : MỘT LỚP TRỪU TƯỢNG ĐƯỢC TẠO RA KHI MÀ CÓ MỘT CÁI MỤC ĐÍCH, TẠO RA CHỈ RA PHƯƠNG THỨC NHƯNG KHÔNG ĐỊNH NGHĨA
+      KHI NÓI LÀ LỚP ABSTRACT THÌ KHÔNG THỂ TỰ TẠO RA CÁC ĐỐI TƯỢNG CỦA BẢN THÂN NÓ, MẶC DÙ NÓ CŨNG CÓ NHỮNG PHƯƠNG THỨC KHỞI TẠO
+      ABSTRACT CŨNG NHƯ NHƯNG LỚP BÌNH THƯỜNG KHÁC , CÓ THỂ CHỨA.....
+      OK .............
       
       link youtube: https://www.youtube.com/watch?v=FHxIAH0sXz0
 
