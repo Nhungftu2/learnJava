@@ -1,0 +1,69 @@
+Khi muốn đọc một file thì FileInputStream
+Khi muốn xuất một file thì FileOutputStream
+
+
+---------------Các lưu ý khi muốn đọc file
+Phải có một package ở ngoài , ví dụ package com.company;
+Có thể tạo một file bằng cách file.createNewFile ....
+file có địa vị bằng với src ,tức tạo từ project
+để sử dụng các class đọc file thì phải import thư viện, có thể dùng phím tắt alt enter nhé
+
+
+
+
+-------------------------------------------------------------------------------> nếu có sẳn đường dẫn chỉ cần code này
+try {
+        FileInputStream fileInput = new FileInputStream("input1.txt");
+
+        while (fileInput.available() > 0){
+            System.out.print((char) fileInput.read());
+        }
+        fileInput.close();
+    }catch(Exception e) {
+        System.out.println("Fail");
+    }
+    
+    ----------------------------------------------------------------------------> Nếu muốn tạo file mới thì dùng code này
+        File file = new File("input.txt"); // input.txt  là file mình muốn tạo (file này chưa có sẳn trong folder)
+        file.createNewFile(); // run thì chạy tạo ra một file // câu lệnh tạo file ở đây
+
+    try {
+        FileInputStream fileInput = new FileInputStream(file); // đọc file bằng câu lệnh này
+
+        while (fileInput.available() > 0){
+            System.out.print((char) fileInput.read());
+        }
+        fileInput.close();
+    }catch(Exception e) {
+        System.out.println("Fail");
+    }
+    
+    
+    
+    
+    
+    --------------------------code tham khảo
+package com.company;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ReadFile {
+    public static void main(String[] args) throws IOException {
+
+        File file = new File("input.txt");
+        file.createNewFile(); // run thì chạy tạo ra một file
+
+    try {
+        FileInputStream fileInput = new FileInputStream(file);
+
+        while (fileInput.available() > 0){
+            System.out.print((char) fileInput.read());
+        }
+        fileInput.close();
+    }catch(Exception e) {
+        System.out.println("Fail");
+    }
+}
+}
