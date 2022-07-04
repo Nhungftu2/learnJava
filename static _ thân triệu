@@ -1,4 +1,13 @@
 CÁC THÀNH PHẦN STATIC 
+--------------------------------------------------
+Các bước dùng biến static của lớp khác 
+-import lớp vào 
+- sử dụng trực tiếp
+---------------------------------------------------
+Khi không có static thì mình dùng từ khóa new, mà muốn sử dụng thì chấm vào đối tượng
+
+
+
 - các hàm static chỉ gọi được các biến, hàm static
 
 - có thể sử dụng trực tiếp mà không cần đến đối tượng 
