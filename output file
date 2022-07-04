@@ -1,0 +1,27 @@
+Nhập dữ liệu vào 1 file 
+
+
+------------------------------------------------------------------------------------Code mẫu như bên dưới
+
+package com.company;
+import java.io.FileOutputStream; // thêm vào
+import java.io.IOException;
+
+public class ReadFile {
+    public static void main(String[] args) throws IOException {
+        //File file = new File ("output.txt");
+        String text = "Tran thi cam nhung";
+
+        FileOutputStream fileOutput = null;
+        try{
+            fileOutput = new FileOutputStream("output.txt");
+            byte[] bytes = text.getBytes();
+            fileOutput.write(bytes);
+        }catch(Exception e){
+            System.out.println("fail");
+        }finally{
+            fileOutput.close();
+        }
+
+    }
+}
