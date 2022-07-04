@@ -25,3 +25,34 @@ public class ReadFile {
 
     }
 }
+-------------------------------------------------------------CÁCH ĐỌC FILE NHANH HƠN
+SỬ DỤNG BufferedOutputStream 
+package com.company;
+
+
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream; // thêm vào
+import java.io.IOException;
+
+public class ReadFile {
+    public static void main(String[] args) throws IOException {
+        //File file = new File ("output.txt");
+        String text = "Tran thi cam nhung dung Buffered";
+
+        FileOutputStream fileOutput = null;
+        //----------Sử dụng BuffereOutputStream
+        BufferedOutputStream bufFileOut = null;
+        try{
+            fileOutput = new FileOutputStream("output.txt");
+            bufFileOut = new BufferedOutputStream(fileOutput);
+            byte[] bytes = text.getBytes();
+            bufFileOut.write(bytes);
+        }catch(Exception e){
+            System.out.println("fail");
+        }finally{
+            bufFileOut.close();
+        }
+
+    }
+}
+
