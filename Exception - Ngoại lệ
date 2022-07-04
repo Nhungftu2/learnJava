@@ -1,0 +1,31 @@
+Exception (ngoại lệ) là gì
+- là một sự kiện chỉ xảy ra trong quá trình Java thực thi một câu lệnh nào đó và thông thường nó sẽ phá vỡ luồng làm việc của chương trình => tức đang chạy sẽ ngừng lại và thông báo lỗi , ví dụ gặp lệnh chia 1 số cho số 0 chẳng hạn
+- Các loại exception trong Java:
++ checked exception : xảy ra tại thời điểm compile time (biên dịch) => lỗi cú pháp ,...
++ unchecked exception: xảy ra tại thời điểm runtime => lỗi logic , ...(ví dụ : 17 chia cho số 0 )
+
+Hành vi gây ra exception
+Người dùng nhập dữ liệu không hợp lệ
+Lỗi thiết bị
+Mất kết nối mạng
+Giới hạn về phần cứng, có thể là hết bộ nhớ
+Lỗi code
+Mở file không hợp lệ
+
+------------------------CÁCH GIẢI QUYẾT
+try{
+... những câu lệnh có exception ;
+}catch{
+bắt lỗi để không bị ngừng chương trình
+}
+
+----------------  các loại exception trong java:
+Trong cây phân cấp, Exception gồm 2 nhánh: RuntimeException và IOException.
+---------------RuntimeException
+ArithmeticException lỗi chia cho số 0
+ArrayIndexOutOfBoundsException lỗi truy cập index của các phần tử không thuộc mảng
+NullPointerException lỗi truy cập con trỏ rỗng
+IllegalArgumentException lỗi xảy ra khi truyền đối số không phù hợp cho phương thức
+--------------IOException
+FileNotFoundException lỗi mở một file không tồn tại
+Lỗi đọc các dòng không có trong file
