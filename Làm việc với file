@@ -52,18 +52,20 @@ import java.io.IOException;
 public class ReadFile {
     public static void main(String[] args) throws IOException {
 
-        File file = new File("input.txt");
-        file.createNewFile(); // run thì chạy tạo ra một file
+        //File file = new File("input1.txt");
+        //file.createNewFile(); // run thì chạy tạo ra một file
+        FileInputStream fileInput = null;
 
     try {
-        FileInputStream fileInput = new FileInputStream(file);
+        fileInput = new FileInputStream("input1.txt");
 
         while (fileInput.available() > 0){
             System.out.print((char) fileInput.read());
         }
-        fileInput.close();
-    }catch(Exception e) {
+    } catch(Exception e) {
         System.out.println("Fail");
-    }
+    } finally { // Finally để đóng file, dù có vô try hay catch thì cũng đóng file được
+        fileInput.close();
+        }
 }
 }
