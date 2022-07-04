@@ -29,3 +29,18 @@ IllegalArgumentException lỗi xảy ra khi truyền đối số không phù h�
 --------------IOException
 FileNotFoundException lỗi mở một file không tồn tại
 Lỗi đọc các dòng không có trong file
+
+
+
+public class Animal {
+    public static void main(String[] args) {
+        try {
+            System.out.println(17/0);
+
+        } catch (Exception e){
+            System.out.println("Exception ");
+        }
+
+        System.out.println("Hihi");
+        }
+}
