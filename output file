@@ -15,8 +15,8 @@ public class ReadFile {
         FileOutputStream fileOutput = null;
         try{
             fileOutput = new FileOutputStream("output.txt");
-            byte[] bytes = text.getBytes();
-            fileOutput.write(bytes);
+            byte[] bytes = text.getBytes(); // lấy ra từng giá trị của chuỗi vào mãng byte này
+            fileOutput.write(bytes); // sử dùng hàm write để viết vào đối tượng fileOuput 
         }catch(Exception e){
             System.out.println("fail");
         }finally{
