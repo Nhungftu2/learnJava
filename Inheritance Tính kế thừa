@@ -32,3 +32,9 @@ public class main {
   }
 }
 link youtube: https://www.youtube.com/watch?v=KfrvZy7x9lc
+
+TRONG JAVA CÓ 3 KIỂU KẾ THỪA:
+ĐƠN KẾ THỪA -  KẾ THỪA NHIỀU CẤP - KẾ THỪA THỨ BẬC
+Về cơ bản, khi một lớp không kế thừa lớp nào thì lớp đó sẽ được kế thừa trực tiếp từ lớp object (giống như đơn kế thừa)
+còn khi đã kế thừa từ 1 lớp rồi thì nó sẽ trực tiếp kế thừa lớp đó và nó đc xem là kế thừa nhiều cấp
+
