@@ -1,1 +1,5 @@
-- tại sao khai báo private trong class thì ko cần gán biến, trường hợp khai báo nào bắt buộc gán biến thì phải, ko nhớ ,.... xem lại video thầy Hoàng
+Câu 1: - tại sao khai báo private trong class thì ko cần gán biến, trường hợp khai báo nào bắt buộc gán biến thì phải, ko nhớ ,.... xem lại video thầy Hoàng
+
+
+Câu 2: Animal n1 = new Cat(); với lại : Cat n2 = new Cat();
+hai cái này khác gì nhau 
