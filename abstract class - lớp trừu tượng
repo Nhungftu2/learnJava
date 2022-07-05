@@ -1,3 +1,7 @@
+https://codelearn.io/learning/lap-trinh-huong-doi-tuong-trong-java/1991699
+
+xem link để đọc thêm lí thuyết
+
 là lớp được khai báo với keyword abstract 
 thương chứa một hoặc nhiều phương thức trừu tượng - abstract
 (phương thức trừu tượng là phương thức, chỉ khai báo mà không định nghĩa,tức là không có thân của phương thức, chỉ có đến mở đóng ngoặc tròn là hết,  việc định nghĩa cụ thể sẽ do lớp con đảm nhiệm )
