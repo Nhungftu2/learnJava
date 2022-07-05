@@ -1,0 +1,13 @@
+GHI LẠI NHỮNG GÌ HỌC QUA, ĐÃ HIỂU VÀ CÓ THỂ QUÊN, GHI LẠI ĐỂ ÔN KHI CẦN 
+
+khi đã có phương thức khởi tạo có tham số, thì chương trình sẽ không mặc định tạo ra phương thức không tham số
+lúc đó muốn sử dụng constructor ko tham số thì phải tự khai báo
+trường hợp một class chỉ khai báo biến thì sẽ mặc định tạo một constructor không tham số
+khi gọi new, tạo đối tượng, thì mặc định sinh ra các biến rổng. đại loại vậy
+constructor không định nghĩa kiểu trả 
+
+-----------------------------------------------------------------------------------------------------------
+
+System.out.printf("%02d/%02d/%d\n",day,month,year);
+code mẫu show ra màn hình ví dụ : 01/02/1997 với day,month, year là int
+------------------------------------------------------------------------------------------------------------
