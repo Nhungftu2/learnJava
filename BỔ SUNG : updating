@@ -11,3 +11,18 @@ constructor không định nghĩa kiểu trả
 System.out.printf("%02d/%02d/%d\n",day,month,year);
 code mẫu show ra màn hình ví dụ : 01/02/1997 với day,month, year là int
 ------------------------------------------------------------------------------------------------------------
+Ghi đè phương thức: lớp con có phương thức y chanh lớp cha, thì lấy cái nào. nếu khai báo như bên dưới
+giả sử Animal a1 = new Dog();
+Dog có sủa gâu gâu mà Animal cũng có sủa "tiếng sủa " thì lúc này a1 lấy gâu gâu. a1 lấy được đặc tính mà lớp con ghi đè, nếu ko đè thì cứ lấy của Animal
+còn nếu lớp con mở rộng ví dụ Dog có thêm canh nhà, thì a1 không lấy cái canh nhà đó được, vì a1 đc định nghĩa mới là animal thôi.
+KẾT LUẬN (a1 là tập hợp chung của Animal với Dog, nếu có function trùng tên thì thực hiện chức năng của Dog)
+------------------------------------------------------------------------------------------------------------
+variable hiding: khi lớp con có phương thức ghi đè lớp cha thì 
+giả sử Animal a1 = new Dog();
+ở Animal có biến int x =1 ; ở Dog có int x=2. ở đây int này là biến nguyên thủy nên nó có 2 địa chỉ khác nhau, và độc lập
+lúc này a1.x sẽ lấy giá trị là 1
+còn nếu ((Dog)a1).x sẽ lấy giá trị là 2 
+
+(điều này có thể giải thích sâu hơn ở cơ chế lưu dữ liệu với kiểu nguyên thủy và kiểu phức tạp, tuy nhiên hiện tại chưa đủ trình để hiểu hết, SẼ TÌM HIỂU THÊM....)
+-------------------------------------------------------------------------------------------------------------
+
