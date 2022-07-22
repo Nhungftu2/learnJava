@@ -7,3 +7,5 @@ dạng dữ liệu float và double in ở printf trong java sẽ viết %...f;
 3 là số chữ số sau dấu phẩy sẽ hiển thị. 
 làm tương tự với double, tuy nhiên vẫn là %...f;
 
+https://openplanning.net/13559/java-string-format-and-printf-methods
+String format
